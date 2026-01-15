@@ -1,0 +1,289 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@700&display=swap');
+@import "tailwindcss";
+@import "tw-animate-css";
+
+/* LocalNearU Design System */
+/* Modern Authentic Minimalism: Warm, human-centered, purposeful */
+/* Primary: Warm Coral (#E8704A) - Energy & Connection */
+/* Secondary: Deep Teal (#1B6B6B) - Trust & Stability */
+/* Neutral: Off-white (#F8F6F3) & Charcoal (#2C2C2C) */
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+}
+
+:root {
+  /* LocalNearU Brand Colors */
+  --primary: #E8704A; /* Warm Coral - Energy & Connection */
+  --primary-foreground: #FFFFFF;
+  --secondary: #1B6B6B; /* Deep Teal - Trust & Stability */
+  --secondary-foreground: #FFFFFF;
+  --accent: #D4AF77; /* Soft Gold - Highlights */
+  --accent-foreground: #2C2C2C;
+  --muted: #A8B89A; /* Soft Sage Green */
+  --muted-foreground: #2C2C2C;
+  --destructive: #E74C3C;
+  --destructive-foreground: #FFFFFF;
+  
+  /* Semantic Colors */
+  --radius: 0.65rem;
+  --background: #F8F6F3; /* Warm Off-white */
+  --foreground: #2C2C2C; /* Charcoal */
+  --card: #FFFFFF;
+  --card-foreground: #2C2C2C;
+  --popover: #FFFFFF;
+  --popover-foreground: #2C2C2C;
+  --border: #E8E4DF; /* Soft border */
+  --input: #F8F6F3;
+  --ring: #E8704A;
+  
+  /* Sidebar (if needed) */
+  --sidebar: #FFFFFF;
+  --sidebar-foreground: #2C2C2C;
+  --sidebar-primary: #E8704A;
+  --sidebar-primary-foreground: #FFFFFF;
+  --sidebar-accent: #1B6B6B;
+  --sidebar-accent-foreground: #FFFFFF;
+  --sidebar-border: #E8E4DF;
+  --sidebar-ring: #E8704A;
+  
+  /* Chart Colors */
+  --chart-1: #E8704A;
+  --chart-2: #1B6B6B;
+  --chart-3: #D4AF77;
+  --chart-4: #A8B89A;
+  --chart-5: #F8A070;
+}
+
+.dark {
+  --primary: #E8704A;
+  --primary-foreground: #FFFFFF;
+  --secondary: #1B6B6B;
+  --secondary-foreground: #FFFFFF;
+  --background: #1A1A1A;
+  --foreground: #F5F5F5;
+  --card: #2A2A2A;
+  --card-foreground: #F5F5F5;
+  --popover: #2A2A2A;
+  --popover-foreground: #F5F5F5;
+  --border: #3A3A3A;
+  --input: #2A2A2A;
+  --ring: #E8704A;
+  --muted: #4A4A4A;
+  --muted-foreground: #B0B0B0;
+  --accent: #D4AF77;
+  --accent-foreground: #1A1A1A;
+  --destructive: #FF6B6B;
+  --destructive-foreground: #1A1A1A;
+  --sidebar: #2A2A2A;
+  --sidebar-foreground: #F5F5F5;
+  --sidebar-primary: #E8704A;
+  --sidebar-primary-foreground: #FFFFFF;
+  --sidebar-accent: #1B6B6B;
+  --sidebar-accent-foreground: #FFFFFF;
+  --sidebar-border: #3A3A3A;
+  --sidebar-ring: #E8704A;
+  --chart-1: #E8704A;
+  --chart-2: #1B6B6B;
+  --chart-3: #D4AF77;
+  --chart-4: #A8B89A;
+  --chart-5: #F8A070;
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Inter', sans-serif;
+  }
+  
+  /* Typography System */
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700;
+  }
+  
+  h1 {
+    @apply text-4xl md:text-5xl lg:text-6xl;
+  }
+  
+  h2 {
+    @apply text-3xl md:text-4xl lg:text-5xl;
+  }
+  
+  h3 {
+    @apply text-2xl md:text-3xl;
+  }
+  
+  .tagline {
+    font-family: 'Playfair Display', serif;
+    font-weight: 700;
+    @apply text-xl md:text-2xl;
+  }
+  
+  button:not(:disabled),
+  [role="button"]:not([aria-disabled="true"]),
+  [type="button"]:not(:disabled),
+  [type="submit"]:not(:disabled),
+  [type="reset"]:not(:disabled),
+  a[href],
+  select:not(:disabled),
+  input[type="checkbox"]:not(:disabled),
+  input[type="radio"]:not(:disabled) {
+    @apply cursor-pointer;
+  }
+  
+  /* Button Styling */
+  button, [role="button"] {
+    transition: all 150ms ease-in-out;
+  }
+  
+  button:hover:not(:disabled) {
+    transform: translateY(-2px);
+  }
+}
+
+@layer components {
+  /**
+   * Custom container utility that centers content and adds responsive padding.
+   *
+   * This overrides Tailwind's default container behavior to:
+   * - Auto-center content (mx-auto)
+   * - Add responsive horizontal padding
+   * - Set max-width for large screens
+   *
+   * Usage: <div className="container">...</div>
+   *
+   * For custom widths, use max-w-* utilities directly:
+   * <div className="max-w-6xl mx-auto px-4">...</div>
+   */
+  .container {
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 1rem; /* 16px - mobile padding */
+    padding-right: 1rem;
+  }
+
+  .flex {
+    min-height: 0;
+    min-width: 0;
+  }
+
+  @media (min-width: 640px) {
+    .container {
+      padding-left: 1.5rem; /* 24px - tablet padding */
+      padding-right: 1.5rem;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .container {
+      padding-left: 2rem; /* 32px - desktop padding */
+      padding-right: 2rem;
+      max-width: 1280px; /* Standard content width */
+    }
+  }
+  
+  /* LocalNearU Custom Components */
+  
+  /* Gradient Text */
+  .gradient-text {
+    background: linear-gradient(135deg, #E8704A 0%, #1B6B6B 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  
+  /* Feature Card */
+  .feature-card {
+    @apply rounded-lg p-6 bg-white border border-border shadow-sm transition-all duration-300 hover:shadow-lg hover:border-primary;
+  }
+  
+  /* Primary Button */
+  .btn-primary {
+    @apply bg-primary text-primary-foreground px-6 py-3 rounded-lg font-medium transition-all duration-300 active:scale-95;
+  }
+  
+  .btn-primary:hover {
+    opacity: 0.9;
+  }
+  
+  /* Secondary Button */
+  .btn-secondary {
+    @apply bg-secondary text-secondary-foreground px-6 py-3 rounded-lg font-medium transition-all duration-300 active:scale-95;
+  }
+  
+  .btn-secondary:hover {
+    opacity: 0.9;
+  }
+  
+  /* Outline Button */
+  .btn-outline {
+    @apply border-2 border-primary text-primary px-6 py-3 rounded-lg font-medium transition-all duration-300 active:scale-95;
+  }
+  
+  .btn-outline:hover {
+    @apply bg-primary text-primary-foreground;
+  }
+  
+  /* Section Padding */
+  .section-py {
+    @apply py-16 md:py-24 lg:py-32;
+  }
+  
+  /* Fade-in animation */
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  .animate-fade-in-up {
+    animation: fadeInUp 0.6s ease-out;
+  }
+}
